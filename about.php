@@ -1,0 +1,232 @@
+<?php
+session_start(); // Start the session to handle login/logout state
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="img/logo.jpg" type="image/x-icon">
+  <title>About Us - Zade Lites</title>
+  <style>
+    @import 'https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap';
+
+    /* General Styles */
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background: url('img/logo.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    /* About Section */
+    .about-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 100px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+    }
+
+    .about-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .about-header h1 {
+      font-size: 3rem;
+      color: black;
+      margin-bottom: 10px;
+    }
+
+    .about-header p {
+      font-size: 1.6rem;
+      color: crimson;
+    }
+
+    .about-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .about-text {
+      width: 100%;
+      max-width: 700px;
+      margin-bottom: 30px;
+    }
+
+    .about-text h2 {
+      font-size: 2rem;
+      color: crimson;
+      margin-bottom: 10px;
+    }
+
+    .about-text p {
+      font-size: 1.6rem;
+      color: black;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .about-text ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      font-size: 1.6rem;
+      color: black;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .about-text .cta {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 1.6rem;
+      color: white;
+      background-color: crimson;
+      border-radius: 5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .about-text .cta:hover {
+      background-color: darkred;
+    }
+
+    .about-content img {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      border: 10px solid white;
+      border-radius: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Responsive Styles */
+    @media only screen and (min-width: 768px) {
+      .about-content {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .about-text {
+        margin-bottom: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header Section -->
+  <section id="header">
+    <div class="header container">
+      <div class="nav-bar">
+        <div class="brand">
+          <a href="#hero">
+            <h1><span>Z</span>ade <span>L</span>ites</h1>
+          </a>
+        </div>
+        <div class="nav-list">
+          <div class="hamburger">
+            <div class="bar"></div>
+          </div>
+          <ul>
+            <li class="dropdown">
+              <button class="dropbtn"><a href="index.html">Home</a></button>
+            </li>
+            <li class="dropdown">
+              <button class="dropbtn"><a href="products.html">Products</a></button>
+              <div class="dropdown-content">
+                <a href="products/products-led.html" data-after="Service">LED PAR</a>
+                <a href="products/products-cob.html" data-after="Service">COB / Strobe / Blinder</a>
+                <a href="products/products-laser.html" data-after="Service">Laser</a>
+                <a href="products/products-beam.html" data-after="Service">Moving Head - Beam</a>
+                <a href="products/products-effect.html" data-after="Service">Effect Lights</a>
+                <a href="products/products-smoke-machine.html" data-after="Service">Smoke Machine</a>
+                <a href="products/products-controls.html" data-after="Service">Consoles</a>
+              </div>
+            </li>
+            <li class="dropdown">
+              <button class="dropbtn"><a href="About.html">About</a></button>
+            </li>
+            <li class="dropdown">
+              <button class="dropbtn"><a href="contact.html">Contact</a></button>
+            </li>
+            <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true): ?>
+            <li class="dropdown">
+              <button class="dropbtn"><a href="logout.php">Logout</a></button>
+            </li>
+            <?php else: ?>
+            <li class="dropdown">
+              <button class="dropbtn"><a href="login.html">Login</a></button>
+            </li>
+            <?php endif; ?>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Header Section -->
+
+  <!-- About Section -->
+  <section class="about-container">
+    <div class="about-header">
+      <h1>About Zade Lites</h1>
+      <p>Illuminating Your Events with Excellence</p>
+    </div>
+    <div class="about-content">
+      <div class="about-text">
+        <h2>Who We Are</h2>
+        <p>Zade Lites is a leading provider of high-quality lighting solutions for all your event needs. Whether you're planning a concert, a wedding, or a corporate event, our extensive range of lights ensures that you can create the perfect atmosphere for any occasion.</p>
+        <h2>Our Mission</h2>
+        <p>At Zade Lites, our mission is to bring your events to life with innovative lighting solutions. We are dedicated to offering a wide range of products that meet the highest standards of quality and performance, ensuring that your events shine bright.</p>
+        <h2>What We Offer</h2>
+        <ul>
+          <li>LED PAR Lights</li>
+          <li>COB, Strobe, and Blinder Lights</li>
+          <li>Laser Lights</li>
+          <li>Moving Head - Beam Lights</li>
+          <li>Effect Lights</li>
+          <li>Smoke Machines</li>
+          <li>Consoles and Controls</li>
+        </ul>
+        <p>We pride ourselves on our commitment to customer satisfaction, offering personalized service and expert advice to help you select the right lighting solutions for your event.</p>
+        <a href="products.html" class="cta">Explore Our Products</a>
+      </div>
+      <div>
+        <!-- Optional image goes here -->
+      </div>
+    </div>
+  </section>
+</body>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Smooth scroll for internal links
+    const links = document.querySelectorAll('a[href^="#"]');
+    links.forEach(link => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        const targetId = link.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  });
+</script>
+
+</html>
