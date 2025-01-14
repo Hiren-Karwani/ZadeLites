@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="img/logo.jpg" type="image/x-icon">
+  <title>Login - Zade Lites</title>
+  <style>
+    @import 'https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap';
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background: url('img/logo.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    /* Login Section */
+    .login-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 100px 20px;
+      max-width: 400px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.8); /* Optional: To make form more readable */
+      border-radius: 10px; /* Optional: To round the corners */
+    }
+
+    .login-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .login-header h1 {
+      font-size: 2.5rem;
+      color: black;
+      margin-bottom: 10px;
+    }
+
+    .login-header p {
+      font-size: 1.4rem;
+      color: crimson;
+    }
+
+    .login-form {
+      width: 100%;
+    }
+
+    .login-form label {
+      display: block;
+      font-size: 1.2rem;
+      color: black;
+      margin-bottom: 5px;
+    }
+
+    .login-form input {
+      width: 100%;
+      padding: 10px;
+      font-size: 1.2rem;
+      border: 2px solid black;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    .login-form button {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 1.4rem;
+      color: white;
+      background-color: crimson;
+      border: none;
+      border-radius: 5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .login-form button:hover {
+      background-color: darkred;
+    }
+
+    /* Responsive Styles */
+    @media only screen and (min-width: 768px) {
+      .login-container {
+        padding: 120px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section class="login-container">
+    <div class="login-header">
+      <h1>Login</h1>
+      <p>Access Your Account</p>
+    </div>
+    <form class="login-form" onsubmit="handleLogin(event)">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required>
+      
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+      
+      <button type="submit">Login</button>
+    </form>
+  </section>
+
+  <script>
+    function handleLogin(event) {
+      event.preventDefault(); // Prevent the form from submitting normally
+
+      // Normally, you'd handle authentication here with server-side code
+
+      // Redirect to home page
+      window.location.href = 'index.html';
+    }
+  </script>
+</body>
+
+</html>
