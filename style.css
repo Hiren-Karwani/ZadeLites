@@ -73,6 +73,42 @@ html {
 	display: block;
   }
 
+/* === Responsive Navbar === */
+@media screen and (max-width: 768px) {
+	/* Make the navbar a column */
+	.navbar {
+	  display: flex;
+	  flex-direction: column;
+	  align-items: stretch;
+	}
+  
+	/* Stack all top-level links & dropdown buttons */
+	.navbar a,
+	.navbar .dropbtn {
+	  float: none;         /* cancel float */
+	  display: block;      /* full-width block */
+	  width: 100%;         
+	  text-align: left;    
+	  padding: 12px 20px;  /* adjust touch area */
+	  border-top: 1px solid #222;  /* optional separator */
+	}
+  
+	/* Position dropdown-content statically so it flows in the column */
+	.dropdown-content {
+	  position: static;
+	  background-color: #0e0e0e;
+	  width: 100%;
+	  box-shadow: none;  /* remove desktop shadow if you like */
+	  border-top: none;
+	}
+  
+	/* Show dropdown on hover (or use JS to toggle a class if you want click) */
+	.dropdown:hover .dropdown-content {
+	  display: block;
+	}
+  }
+  
+
 /* End Navbar styles */
 
 /* Add your other styles below this line */
