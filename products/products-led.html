@@ -94,6 +94,32 @@
         <a href="ZLP-033C.html"><h2>ZLP-033C</h2></a>
         <p class="description">54*3W RGBW LED PAR 4 IN 1 WATERPROOF Consumption - 200W Power Supply Specifics - 2 metre wire, 2 Main board Lamp - 3W*54pcs RGB 4 in 1 Dimmer - 0 to 100% IP65 - Waterproof Channel - 8 Channels Function - DMX 512 Control, Automatic, Voice Control Housing Material - Aluminium Alloy</p>
   </div>
-  <script src="script.js"></script>
+ <script>
+    const hamburger = document.querySelector('.header .nav-bar .nav-list .hamburger');
+    const mobile_menu = document.querySelector('.header .nav-bar .nav-list ul');
+    const menu_item = document.querySelectorAll('.header .nav-bar .nav-list ul li a');
+    const header = document.querySelector('.header.container');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobile_menu.classList.toggle('active');
+    });
+
+    document.addEventListener('scroll', () => {
+      var scroll_position = window.scrollY;
+      if (scroll_position > 250) {
+        header.style.backgroundColor = '#29323c';
+      } else {
+        header.style.backgroundColor = 'transparent';
+      }
+    });
+
+    menu_item.forEach((item) => {
+      item.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        mobile_menu.classList.toggle('active');
+      });
+    });
+  </script>
 </body>
 </html>

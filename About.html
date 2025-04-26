@@ -137,6 +137,49 @@ body {
 </head>
 
 <body>
+
+<!-- Header -->
+  <section id="header">
+    <div class="header container">
+      <div class="nav-bar">
+        <div class="brand">
+          <a href="#hero">
+            <h1><span>Z</span>ade <span>L</span>ites</h1>
+          </a>
+        </div>
+        <div class="nav-list">
+          <div class="hamburger">
+            <div class="bar"></div>
+          </div>
+          <ul>
+            <li class="dropdown">
+              <button class="dropbtn"><a href="index.html">Home</a></button>
+            </li>
+            <li class="dropdown">
+              <button class="dropbtn"><a href="products.html">Products</a></button>
+              <div class="dropdown-content">
+                <a href="products/products-led.html" data-after="Service">LED PAR</a>
+                <a href="products/products-cob.html" data-after="Service">COB / Strobe / Blinder</a>
+                <a href="products/products-laser.html" data-after="Service">Laser</a>
+                <a href="products/products-beam.html" data-after="Service">Moving Head - Beam</a>  
+                <a href="products/products-effect.html" data-after="Service">Effect Lights</a>
+                <a href="products/products-smoke-machine.html" data-after="Service">Smoke Machine</a>
+                <a href="products/products-controls.html" data-after="Service">Consoles</a>
+              </div>
+            </li>
+            <li class="dropdown">
+              <button class="dropbtn"><a href="About.html">About</a></button>
+            </li>
+            <li class="dropdown">
+              <button class="dropbtn"><a href="contact.html">Contact</a></button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Header -->
+
   <section class="about-container">
     <div class="about-header">
       <h1>About Zade Lites</h1>
@@ -166,7 +209,31 @@ body {
     </div>
   </section>
   <script>
-    // script.js
+    const hamburger = document.querySelector('.header .nav-bar .nav-list .hamburger');
+    const mobile_menu = document.querySelector('.header .nav-bar .nav-list ul');
+    const menu_item = document.querySelectorAll('.header .nav-bar .nav-list ul li a');
+    const header = document.querySelector('.header.container');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobile_menu.classList.toggle('active');
+    });
+
+    document.addEventListener('scroll', () => {
+      var scroll_position = window.scrollY;
+      if (scroll_position > 250) {
+        header.style.backgroundColor = '#29323c';
+      } else {
+        header.style.backgroundColor = 'transparent';
+      }
+    });
+
+    menu_item.forEach((item) => {
+      item.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        mobile_menu.classList.toggle('active');
+      });
+    });
 
 document.addEventListener('DOMContentLoaded', () => {
     // Smooth scroll for internal links
