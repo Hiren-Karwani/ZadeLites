@@ -10,14 +10,13 @@
   <style>
     @import 'https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap';
 
-
-/* Products */
-.product {
-    margin-bottom: 20px; /* Add space between product containers */
-	margin-left: 20px;
-	margin-top: 20px;
-	margin-right: 20px;
-}
+    /* Products */
+    .product {
+        margin-bottom: 20px; /* Add space between product containers */
+        margin-left: 20px;
+        margin-top: 20px;
+        margin-right: 20px;
+    }
   </style>
 </head>
 
@@ -37,7 +36,8 @@
           </div>
           <ul>
             <li class="dropdown">
-              <button class="dropbtn"><a href="#hero">Home</a></button>
+              <button class="dropbtn"><a href="index.html">Home</a></button>
+            </li>
             <li class="dropdown">
               <button class="dropbtn"><a href="products.html">Products</a></button>
               <div class="dropdown-content">
@@ -48,17 +48,20 @@
                 <a href="products/products-effect.html" data-after="Service">Effect Lights</a>
                 <a href="products/products-smoke-machine.html" data-after="Service">Smoke Machine</a>
                 <a href="products/products-controls.html" data-after="Service">Consoles</a>
-                <li class="dropdown">
-                  <button class="dropbtn"><a href="About.html">About</a></button>
-                <li class="dropdown">
-                  <button class="dropbtn"><a href="contact.html">Contact</a></button>
+              </div>
+            </li>
+            <li class="dropdown">
+              <button class="dropbtn"><a href="About.html">About</a></button>
+            </li>
+            <li class="dropdown">
+              <button class="dropbtn"><a href="contact.html">Contact</a></button>
+            </li>
           </ul>
         </div>
       </div>
     </div>
   </section>
   <!-- End Header -->
-
 
   <!-- Hero Section  -->
   <section id="hero">
@@ -83,8 +86,8 @@
       </div>
       <div class="col-right">
         <h1 class="section-title">About <span>us</span></h1>
-        <h2>1 line description</h2>
-        <p>detail description</p>
+        <h2>Illuminating Your Events with Excellence</h2>
+        <p>At Zade Lites, our mission is to bring your events to life with innovative lighting solutions. We are dedicated to offering a wide range of products that meet the highest standards of quality and performance, ensuring that your events shine bright.</p>
       </div>
     </div>
   </section>
@@ -101,7 +104,7 @@
           <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/phone.png" /></div>
           <div class="contact-info">
             <h1><a href="tel:8452930292">Phone</a></h1>
-            <h2>Call <a href="tel:8452930292">8452930292</a> for any querries</h2>
+            <h2>Call <a href="tel:8452930292">8452930292</a> for any queries</h2>
           </div>
         </div>
         <div class="contact-item">
@@ -114,13 +117,12 @@
         <div class="contact-item">
           <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/map-marker.png" /></div>
           <div class="contact-info"> 
-            <h1><a href="https://maps.app.goo.gl/Mw8BLfT7hPx12F496"target="_blank">Address</a></h1>
-            <h2><a href="https://maps.app.goo.gl/Mw8BLfT7hPx12F496"target="_blank">63, 1ST FLOOR, PLOT 339
+            <h1><a href="https://maps.app.goo.gl/Mw8BLfT7hPx12F496" target="_blank">Address</a></h1>
+            <h2><a href="https://maps.app.goo.gl/Mw8BLfT7hPx12F496" target="_blank">63, 1ST FLOOR, PLOT 339
               RAJESH BUILDING
               OPP. BHADKAMKAR MARG POLICE STATION
               DR. D B MARG, GRANT ROAD EAST
-              MUMBAI 400007. 
-              </a></h2>
+              MUMBAI 400007.</a></h2>
           </div>
         </div>
       </div>
@@ -142,41 +144,39 @@
         <div class="social-item">
           <a href="https://www.instagram.com/zadelites?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><img src="https://img.icons8.com/bubbles/100/000000/instagram-new.png" /></a>
         </div>
-        </div>
       </div>
       <p>Copyright © 2024. All rights reserved</p>
     </div>
   </section>
   <!-- End Footer -->
-  <!-- <script src="./app.js"></script> -->
-   <script>
+
+  <script>
     const hamburger = document.querySelector('.header .nav-bar .nav-list .hamburger');
-const mobile_menu = document.querySelector('.header .nav-bar .nav-list ul');
-const menu_item = document.querySelectorAll('.header .nav-bar .nav-list ul li a');
-const header = document.querySelector('.header.container');
+    const mobile_menu = document.querySelector('.header .nav-bar .nav-list ul');
+    const menu_item = document.querySelectorAll('.header .nav-bar .nav-list ul li a');
+    const header = document.querySelector('.header.container');
 
-hamburger.addEventListener('click', () => {
-	hamburger.classList.toggle('active');
-	mobile_menu.classList.toggle('active');
-});
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobile_menu.classList.toggle('active');
+    });
 
-document.addEventListener('scroll', () => {
-	var scroll_position = window.scrollY;
-	if (scroll_position > 250) {
-		header.style.backgroundColor = '#29323c';
-	} else {
-		header.style.backgroundColor = 'transparent';
-	}
-});
+    document.addEventListener('scroll', () => {
+      var scroll_position = window.scrollY;
+      if (scroll_position > 250) {
+        header.style.backgroundColor = '#29323c';
+      } else {
+        header.style.backgroundColor = 'transparent';
+      }
+    });
 
-menu_item.forEach((item) => {
-	item.addEventListener('click', () => {
-		hamburger.classList.toggle('active');
-		mobile_menu.classList.toggle('active');
-	});
-});
-
-   </script>
+    menu_item.forEach((item) => {
+      item.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        mobile_menu.classList.toggle('active');
+      });
+    });
+  </script>
 </body>
 
 </html>

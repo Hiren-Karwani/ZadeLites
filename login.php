@@ -1,6 +1,11 @@
 <?php
 session_start();
 
+<?php
+echo json_encode(["message" => "Hello, World!"]);
+?>
+
+
 // Replace these with your actual database credentials
 $servername = "localhost";
 $username = "root";
